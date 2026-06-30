@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animales de Bolivia 🦙</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/random/1600x900/?andes-bolivia') center/cover;
+            opacity: 0.4;
+            z-index: -1;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.95;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .intro {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        .animals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        
+        .animal-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .animal-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+        
+        .animal-image {
+            height: 260px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .animal-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        }
+        
+        .animal-name {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            z-index: 2;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .scientific-name {
+            font-style: italic;
+            color: #27ae60;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .description {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .fact {
+            background: #f8f9fa;
+            border-left: 5px solid #e67e22;
+            padding: 12px 18px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+        
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.95);
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="#animales" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Animales</a>
+    </nav>
+
+    <header>
+        <h1>Animales de Bolivia</h1>
+        <p class="subtitle">La increíble biodiversidad del corazón de Sudamérica</p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Bolivia: Un paraíso natural</h2>
+            <p>Bolivia alberga una de las mayores biodiversidades del mundo gracias a su variedad de ecosistemas: los Andes, la Amazonía, el Chaco y el Altiplano. Aquí te presentamos 5 especies emblemáticas que representan la riqueza faunística del país.</p>
+        </div>
+
+        <h2 id="animales" style="text-align: center; margin-bottom: 30px; color: white;">Especies Destacadas</h2>
+        
+        <div class="animals-grid">
+
+            <!-- Animal 1 -->
+            <div class="animal-card">
+                <div class="animal-image" style="background-image: url('primero.jpg');">
+                    <div class="animal-name">Cóndor Andino</div>
+                </div>
+                <div class="card-body">
+                    <h3 style="margin-bottom: 8px;">Cóndor Andino</h3>
+                    <p class="scientific-name"><em>Vultur gryphus</em></p>
+                    <p class="description">El ave voladora más grande del mundo. Con una envergadura de hasta 3,3 metros, es símbolo nacional de Bolivia. Habita en las altas montañas de los Andes.</p>
+                    <div class="fact">
+                        <strong>Dato curioso:</strong> Puede volar durante horas sin batir las alas aprovechando las corrientes térmicas.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animal 2 -->
+            <div class="animal-card">
+                <div class="animal-image" style="background-image: url('segundo.jpg');">
+                    <div class="animal-name">Llama</div>
+                </div>
+                <div class="card-body">
+                    <h3 style="margin-bottom: 8px;">Llama</h3>
+                    <p class="scientific-name"><em>Lama glama</em></p>
+                    <p class="description">Mamífero domesticado hace miles de años por los pueblos andinos. Es fundamental en la cultura boliviana, usada como animal de carga y por su lana.</p>
+                    <div class="fact">
+                        <strong>Dato curioso:</strong> Escupe como mecanismo de defensa cuando se siente amenazada.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animal 3 -->
+            <div class="animal-card">
+                <div class="animal-image" style="background-image: url('tercero.jpg');">
+                    <div class="animal-name">Jaguar</div>
+                </div>
+                <div class="card-body">
+                    <h3 style="margin-bottom: 8px;">Jaguar</h3>
+                    <p class="scientific-name"><em>Panthera onca</em></p>
+                    <p class="description">El gran felino de la Amazonía boliviana. Es uno de los depredadores más poderosos de Sudamérica y vive principalmente en los bosques húmedos y pantanos.</p>
+                    <div class="fact">
+                        <strong>Dato curioso:</strong> Es excelente nadador y caza tanto en tierra como en el agua.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animal 4 -->
+            <div class="animal-card">
+                <div class="animal-image" style="background-image: url('cuarto.jpg');">
+                    <div class="animal-name">Oso Andino</div>
+                </div>
+                <div class="card-body">
+                    <h3 style="margin-bottom: 8px;">Oso Andino (Jukumari)</h3>
+                    <p class="scientific-name"><em>Tremarctos ornatus</em></p>
+                    <p class="description">Único oso nativo de Sudamérica. Vive en los bosques nublados de los Andes y se distingue por las manchas blancas alrededor de los ojos que parecen anteojos.</p>
+                    <div class="fact">
+                        <strong>Dato curioso:</strong> Es mayoritariamente vegetariano, aunque puede comer carne ocasionalmente.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animal 5 -->
+            <div class="animal-card">
+                <div class="animal-image" style="background-image: url('quinto.jpg');">
+                    <div class="animal-name">Delfín Rosado</div>
+                </div>
+                <div class="card-body">
+                    <h3 style="margin-bottom: 8px;">Delfín del Amazonas</h3>
+                    <p class="scientific-name"><em>Inia geoffrensis</em></p>
+                    <p class="description">También conocido como "bufeo" o delfín rosado. Habita en los ríos de la Amazonía boliviana. Su color rosado se intensifica con la edad.</p>
+                    <div class="fact">
+                        <strong>Dato curioso:</strong> Puede cambiar de color según su estado de ánimo o excitación.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Animales Emblemáticos de Bolivia</strong> — Preservemos nuestra biodiversidad</p>
+        <p style="margin-top: 15px; opacity: 0.8;">Página creada con ❤️ para apreciar la fauna boliviana</p>
+    </footer>
+</body>
+</html>
